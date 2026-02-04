@@ -41,3 +41,12 @@ elif should_sell(df, config):
 else:
     print("DECISION: WAIT")
     print("Reason: لا يوجد انعكاس مؤكد أو الاتجاه ما زال صاعد")
+
+from telegram_bot import run_telegram_bot
+import os
+
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+
+if TELEGRAM_TOKEN:
+    run_telegram_bot(TELEGRAM_TOKEN)
+
