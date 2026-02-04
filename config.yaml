@@ -1,0 +1,25 @@
+# ===== General Settings =====
+symbol: SHIBUSDT        # العملة التي تختارها
+timeframe: 15m          # الإطار الزمني (5m, 15m, 1h, 4h)
+
+# ===== Capital Management =====
+use_percent: 20         # نسبة من الرصيد (مثال: 20% فقط)
+min_usdt: 10            # أقل مبلغ مسموح للتبديل
+
+# ===== Strategy Rules =====
+buy:
+  rsi_below: 30
+  price_near_bb_lower: true
+
+sell:
+  rsi_above: 70
+  price_near_bb_upper: true
+
+# ===== Indicators =====
+ema_fast: 7
+ema_slow: 25
+ema_trend: 99
+
+# ===== Safety =====
+cooldown_minutes: 30    # انتظار بين كل صفقة
+
