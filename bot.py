@@ -29,3 +29,15 @@ elif should_sell(df, config):
 
 else:
     print("DECISION: WAIT (No Action)")
+# ===== Explain Decision =====
+if should_buy(df, config):
+    print("DECISION: BUY")
+    print("Reason: RSI منخفض + انعكاس فوق EMA + حجم مؤكد")
+
+elif should_sell(df, config):
+    print("DECISION: SELL")
+    print("Reason: تشبع شراء + كسر EMA_fast + بداية هبوط")
+
+else:
+    print("DECISION: WAIT")
+    print("Reason: لا يوجد انعكاس مؤكد أو الاتجاه ما زال صاعد")
