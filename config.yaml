@@ -1,25 +1,29 @@
 # ===== General Settings =====
-symbol: SHIBUSDT        # العملة التي تختارها
-timeframe: 15m          # الإطار الزمني (5m, 15m, 1h, 4h)
+symbols:                  # أنت تتحكم (عملة واحدة أو اثنتين فقط)
+  - SHIBUSDT
+  # - DOGEUSDT
+
+timeframe: 15m            # الإطار الزمني الذي تختاره
 
 # ===== Capital Management =====
-use_percent: 20         # نسبة من الرصيد (مثال: 20% فقط)
-min_usdt: 10            # أقل مبلغ مسموح للتبديل
+use_percent: 20           # نسبة التبديل من الرصيد
+min_usdt: 10              # أقل مبلغ للتبديل
 
-# ===== Strategy Rules =====
+# ===== BUY LOGIC =====
 buy:
-  rsi_below: 30
-  price_near_bb_lower: true
+  rsi_below: 30            # تشبع بيع حقيقي
+  require_reversal: true  # لا شراء بدون انعكاس
 
+# ===== SELL LOGIC =====
 sell:
-  rsi_above: 70
-  price_near_bb_upper: true
+  rsi_above: 70            # تشبع شراء
+  sell_on_pullback: true  # بيع فقط عند بداية هبوط
 
-# ===== Indicators =====
-ema_fast: 7
-ema_slow: 25
-ema_trend: 99
+# ===== Indicators Settings =====
+ema_fast: 7               # انعكاس سريع
+ema_slow: 25              # (احتياطي للمستقبل)
+ema_trend: 99             # فلترة الاتجاه العام
 
-# ===== Safety =====
-cooldown_minutes: 30    # انتظار بين كل صفقة
-
+# ===== Safety Rules =====
+cooldown_minutes: 30      # انتظار بين الصفقات
+max_open_positions: 2     # أقصى عدد عملات (صارم)
